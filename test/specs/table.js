@@ -1,4 +1,4 @@
-import Webtable from "../utils/Webtable.js"
+import Webtable from "../../utils/Webtable.js"
 
 //const Webtable = require("../utils/Webtable.js")
 

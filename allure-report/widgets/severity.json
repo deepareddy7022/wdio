@@ -1,0 +1,1 @@
+[{"uid":"6bb16afa295e6251","name":"multi select","time":{"start":1689423196950,"stop":1689423202061,"duration":5111},"status":"passed","severity":"normal"},{"uid":"6e2a0c80b35d752a","name":"radio","time":{"start":1689423193014,"stop":1689423202065,"duration":9051},"status":"unknown","severity":"critical"}]

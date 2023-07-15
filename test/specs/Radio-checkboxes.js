@@ -1,12 +1,17 @@
-describe("Radio-checkbox", () => {
-    xit("radio", async () => {
+import allureReporter from '@wdio/allure-reporter'
 
+describe("Radio-checkbox", () => {
+    it("radio", async () => {
+        allureReporter.addStory("Validate Radio checkboxes in wdio")
+        allureReporter.startStep("Open browser URL")
+        allureReporter.addSeverity("critical")
         await browser.url("https://qavbox.github.io/demo/")
+        allureReporter.startStep("Maximise window")
         await browser.maximizeWindow()
         await $('=SignUp Form').click()
 
         await $('input[type=\'radio\']').scrollIntoView()
-        await browser.pause(2000)
+
         let radiobuttons = await $$('input[type=\'radio\']')
         //console.log("length : " + await radiobuttons.length)
         expect(await radiobuttons.length).toEqual(8)

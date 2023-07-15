@@ -1,7 +1,7 @@
 
 import { Key } from 'webdriverio';
 
-import commonFunctions from "../utils/commonFunctions"
+import commonFunctions from "../../utils/commonFunctions"
 
 describe("Handlign different dropdowns", () => {
     xit("Dropdown with select by index", async () => {

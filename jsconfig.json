@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "module": "CommonJS",
         "types": [
             "node",
             "@wdio/globals/types",
