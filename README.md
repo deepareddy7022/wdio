@@ -1,1 +1,1 @@
-# wdio
+# WebdriverIO - Next-gen browser and mobile automation test framework for Node.js
