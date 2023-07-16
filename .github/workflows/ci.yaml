@@ -13,9 +13,9 @@ jobs:
           run: npm install
         - name: Test
           run: npm run wdio
-        - uses: actions/upload-artifact@v1
+        - uses: actions/upload-artifact@v3
           with:
-            name: Allure Report
+            name: AllureReport
             path: ./reports/allure/allure-report
 
 
