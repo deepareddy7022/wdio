@@ -6,7 +6,7 @@ describe("test", () => {
     it("tesrtt", () => {
 
         console.log(url)
-        console.log(process.env.qa)
+        console.log(process.env.QA)
         printMessage("Hi")
         add(10, 20)
         subtract(30, 10)
