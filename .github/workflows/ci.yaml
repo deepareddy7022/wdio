@@ -14,9 +14,7 @@ jobs:
         - name: Test
           env:
              qa: ${{secrets.QA}}
-          run: | 
-                 npm run wdio
-                 echo '$qa'
+          run: npm run wdio
         - uses: actions/upload-artifact@v3
           with:
             name: AllureReport
