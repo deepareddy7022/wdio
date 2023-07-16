@@ -37,7 +37,7 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/Radio-checkboxes.js'
+        './test/specs/**/import.js'
     ],
     // Patterns to exclude.
     exclude: [
