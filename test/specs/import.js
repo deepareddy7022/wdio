@@ -1,6 +1,6 @@
 import { url, printMessage, add, subtract } from "../pageobjects/import-export.js"
 
-
+import 'dotenv/config'
 
 describe("test", () => {
     it("tesrtt", () => {
