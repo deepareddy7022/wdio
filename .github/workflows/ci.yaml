@@ -12,7 +12,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Test
-        - env:
+          env:
              qa: ${{qa}}     
           run: npm run wdio
         - uses: actions/upload-artifact@v3
