@@ -3,6 +3,7 @@
 //let env = process.env.Env
 
 import allure from "allure-commandline"
+let allureDir = ".reports/allure"
 
 
 
@@ -162,7 +163,7 @@ export const config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: [['allure', {
-        outputDir: 'allure-results',
+        outputDir: allureDir + '/allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
     }]],
@@ -242,8 +243,19 @@ export const config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: function (suite) {
+
+        const fs = require('fs')
+        let dir = allureDir + "/allure-results"
+        try {
+            if (fs.existsSync(dir)) {
+                fs.rmSync(dir, { recursive: true })
+            }
+            console.log(`${dir} is deleted`)
+        } catch (err) {
+            console.error(`${dir} is not deleted`)
+        }
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
@@ -323,7 +335,7 @@ export const config = {
     ,
     onComplete: function (exitCode, config, capabilities, results) {
         const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', 'allure-results', '--clean'])
+        const generation = allure(['generate', allureDir + '/allure-results', '--clean', '-o', outputDir + "/allure-report"])
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
