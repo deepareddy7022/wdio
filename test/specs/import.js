@@ -7,7 +7,7 @@ describe("test", () => {
 
         console.log(url)
         console.log("read data from secrets github actions", process.env.QA)
-        printMessage("Hi")
+        printMessage("Hello")
         add(10, 20)
         subtract(30, 10)
 
