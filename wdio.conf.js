@@ -3,7 +3,7 @@
 //let env = process.env.Env
 
 import allure from "allure-commandline"
-let allureDir = ".reports/allure"
+let allureDir = "./reports/allure"
 
 
 
