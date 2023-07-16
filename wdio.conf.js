@@ -3,7 +3,7 @@
 //let env = process.env.Env
 
 import allure from "allure-commandline"
-let allureDir = ".reports/allure"
+let allureDir = "./reports/allure"
 
 
 
@@ -254,6 +254,10 @@ export const config = {
             console.log(`${dir} is deleted`)
         } catch (err) {
             console.error(`${dir} is not deleted`)
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true })
+                console.log("created reorts folder")
+            }
         }
     },
     /**
@@ -335,7 +339,7 @@ export const config = {
     ,
     onComplete: function (exitCode, config, capabilities, results) {
         const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', allureDir + '/allure-results', '--clean', '-o', outputDir + "/allure-report"])
+        const generation = allure(['generate', allureDir + '/allure-results', '--clean', '-o', allureDir + "/allure-report"])
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
