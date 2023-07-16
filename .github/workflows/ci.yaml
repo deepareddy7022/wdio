@@ -17,6 +17,6 @@ jobs:
           if: failure()
           with:
             name: Allure Report
-            path: ./allure-report
+            path: .reports/allure/allure-report
 
 
