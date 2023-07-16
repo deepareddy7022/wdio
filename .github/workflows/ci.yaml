@@ -12,6 +12,9 @@ jobs:
         - name: Install
           run: npm install
         - name: Test
+        - env:
+             qa: ${{qa}}
+              
           run: npm run wdio
         - uses: actions/upload-artifact@v3
           with:
